@@ -1,0 +1,2 @@
+class ScrimAdsController < ApplicationController
+end

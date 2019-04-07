@@ -1,0 +1,2 @@
+class ScrimAd < ApplicationRecord
+end

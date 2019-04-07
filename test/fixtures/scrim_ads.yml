@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teammember1: MyString
+  teammember2: MyString
+  teammember3: MyString
+  teammember4: MyString
+  teammember5: MyString
+  sabmember1: MyString
+  sabmember: MyString
+  average_mmr: MyString
+  contact: MyString
+  closed: MyString
+  start_time: MyString
+
+two:
+  teammember1: MyString
+  teammember2: MyString
+  teammember3: MyString
+  teammember4: MyString
+  teammember5: MyString
+  sabmember1: MyString
+  sabmember: MyString
+  average_mmr: MyString
+  contact: MyString
+  closed: MyString
+  start_time: MyString
