@@ -1,0 +1,14 @@
+<p><%= @scrim_ad.teammember1 %></p>
+<p><%= @scrim_ad.teammember2 %></p>
+<br /><%= link_to "削除", scrim_ad_path, method: :delete, class: "btn btn-danger" %>
+
+<% @scrim_ad.comments.each do |comment| %>
+<%= comment.user.id %>
+<%= comment.description %>
+<%end%>
+<%= form_with model: @comment, local: true do |form| %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= hidden_field_tag :scrim_ad, params[:id] %>
+  <%= form.submit "コメントする"%>
+<%end%>

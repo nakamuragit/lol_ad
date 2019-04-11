@@ -1,0 +1,8 @@
+<%= flash.notice %>
+<% @scrim_ads.each do |info| %>
+  <p><%= link_to info.title, scrim_ad_path(info) %></p>
+  <p><%= info.teamname %></p>
+<%end%>
+
+
+<p>test</p>

@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_125758) do
+ActiveRecord::Schema.define(version: 2019_04_11_174017) do
+
+  create_table "applications", force: :cascade do |t|
+    t.string "member1"
+    t.string "member2"
+    t.string "member3"
+    t.string "member4"
+    t.string "member5"
+    t.string "average_MMR"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "scrim_ad_id"
+    t.index ["scrim_ad_id"], name: "index_comments_on_scrim_ad_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "scrim_ads", force: :cascade do |t|
+    t.string "teammember1"
+    t.string "teammember2"
+    t.string "teammember3"
+    t.string "teammember4"
+    t.string "teammember5"
+    t.string "sabmember1"
+    t.string "sabmember2"
+    t.integer "average_mmr"
+    t.string "contact"
+    t.datetime "closed"
+    t.datetime "start_time"
+    t.text "title"
+    t.text "teamname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_scrim_ads_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
