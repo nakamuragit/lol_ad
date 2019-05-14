@@ -1,0 +1,16 @@
+<p><%= @scrim_ad.teammember1 %></p>
+<p><%= @scrim_ad.teammember2 %></p>
+<br /><%= link_to "削除", scrim_ad_path, method: :delete, class: "btn btn-danger" %>
+<%= link_to "編集", edit_scrim_ad_path(@scrim_ad), class: "btn btn-success" %>
+<%= link_to "応募する", new_application_path(@scrim_ad), class: "btn btn-danger" %>
+<% @scrim_ad.comments.each do |comment| %>
+  <p><%= comment.user.id %></p>
+  <p><%= comment.description %></p>
+<%end%>
+
+<%= form_with model: @comment, local: true do |form| %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= hidden_field_tag :scrim_ad, params[:id] %>
+  <%= form.submit "コメントする"%>
+<%end%>
