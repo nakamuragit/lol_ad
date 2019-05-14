@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.scrim_ad_id = params[:scrim_ad]
-    @comment.save!
+    @comment.save
     redirect_to scrim_ads_path
   end
   

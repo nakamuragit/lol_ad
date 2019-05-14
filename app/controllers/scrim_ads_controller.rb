@@ -31,6 +31,16 @@ class ScrimAdsController < ApplicationController
     @comment = Comment.new()
   end
   
+  def edit
+    @scrim_ad = ScrimAd.find(params[:id])
+  end
+  
+  def update
+    @scrim_ad = ScrimAd.find(params[:id])
+    @scrim_ad.update(scrim_ads_params)
+    redirect_to scrim_ads_path
+  end
+  
 private 
 
   def scrim_ads_params

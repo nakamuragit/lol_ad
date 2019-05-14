@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_174017) do
+ActiveRecord::Schema.define(version: 2019_04_12_071846) do
 
   create_table "applications", force: :cascade do |t|
     t.string "member1"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_04_11_174017) do
     t.string "average_MMR"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
